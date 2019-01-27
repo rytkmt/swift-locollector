@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 class RootViewController: UIViewController {
     
 //    let sidemenuViewController = SidemenuViewController()
@@ -18,6 +19,8 @@ class RootViewController: UIViewController {
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addButton: UIButton!
+    
+    var locations: Results<Location>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,9 @@ class RootViewController: UIViewController {
         sidemenuViewController.delegate = self
         sidemenuViewController.startPanGestureRecognizing()
         
-        setMap()
+        self.locations = loadStoredLocations()
+        prepareMap()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,26 +74,53 @@ class RootViewController: UIViewController {
         })
     }
     
-    private func setMap(){
-        let firstPoint = setPointPins()
+    private func prepareMap(){
+        for location in self.locations {
+            self.dropPin(location)
+        }
+        pointLocation(self.locations.first)
         
-        // 倍率を指定 Delta=度 で1度が約111km
-        let span : MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
-        let region : MKCoordinateRegion = MKCoordinateRegion(center: firstPoint, span: span)
-        mapView.region = region
     }
     
     // TODO: DBから取得しループしてすべてをannotationとする
-    private func setPointPins() -> CLLocationCoordinate2D{
+    private func dropPin(_ location: Location) -> CLLocationCoordinate2D{
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(35.710063, 139.8107)
-        annotation.title = "東京スカイツリー"
+        annotation.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+        annotation.title = location.title
         mapView.addAnnotation(annotation)
         
         return CLLocationCoordinate2DMake(35.710063, 139.8107)
     }
+    
+    private func pointLocation(_ location: Location?, delta: Double = 0.03){
+        // 倍率を指定 Delta=度 で1度が約111km
+        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
+        let center: CLLocationCoordinate2D
+        if let _location = location {
+            center = CLLocationCoordinate2DMake(_location.latitude, _location.longitude)
+        }else{
+            // pinがなければ大阪駅をデフォルトに
+            center = CLLocationCoordinate2DMake(34.702485, 135.495951)
+        }
+        let region : MKCoordinateRegion = MKCoordinateRegion(center: center, span: span)
+        mapView.region = region
+    }
+    
+    private func loadStoredLocations() -> Results<Location> {
+        let realm = try! Realm()
+        return realm.objects(Location.self).sorted(byKeyPath: "createdAt", ascending: false)
+    }
 
-
+    @IBAction func tapAddButton(_ sender: Any) {
+        let location = Location.create(title: "東京駅", latitude: 35.681236, longitude: 139.767125)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(location)
+        }
+        dropPin(location)
+        pointLocation(location)
+    }
+    
 }
 
 extension RootViewController: SidemenuViewControllerDelegate {

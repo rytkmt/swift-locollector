@@ -32,6 +32,9 @@
                                 <state key="normal" title="＋">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ov-sA-xLA"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kT-D6-ihE">
                                 <rect key="frame" x="15" y="74" width="345" height="50"/>
