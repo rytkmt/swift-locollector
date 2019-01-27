@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AAA284B21FD781800AD618D /* SidemenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAA284A21FD781800AD618D /* SidemenuViewController.swift */; };
 		2AB5FF5721F4715100308D67 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5FF5621F4715100308D67 /* IconButton.swift */; };
 		2AB5FF5921F4AB8A00308D67 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5FF5821F4AB8A00308D67 /* SettingViewController.swift */; };
 		2AB5FF5B21F4AE7500308D67 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5FF5A21F4AE7500308D67 /* NavigationController.swift */; };
 		2AF24ED921F4188F00BA85DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF24ED821F4188F00BA85DF /* AppDelegate.swift */; };
-		2AF24EDB21F4188F00BA85DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF24EDA21F4188F00BA85DF /* ViewController.swift */; };
+		2AF24EDB21F4188F00BA85DF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF24EDA21F4188F00BA85DF /* RootViewController.swift */; };
 		2AF24EDE21F4188F00BA85DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF24EDC21F4188F00BA85DF /* Main.storyboard */; };
 		2AF24EE021F4189500BA85DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF24EDF21F4189500BA85DF /* Assets.xcassets */; };
 		2AF24EE321F4189500BA85DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF24EE121F4189500BA85DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AAA284A21FD781800AD618D /* SidemenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidemenuViewController.swift; sourceTree = "<group>"; };
 		2AB5FF5621F4715100308D67 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		2AB5FF5821F4AB8A00308D67 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2AB5FF5A21F4AE7500308D67 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		2AF24ED521F4188F00BA85DF /* locollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF24ED821F4188F00BA85DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2AF24EDA21F4188F00BA85DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AF24EDA21F4188F00BA85DF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2AF24EDD21F4188F00BA85DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AF24EDF21F4189500BA85DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AF24EE221F4189500BA85DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,10 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				2AF24ED821F4188F00BA85DF /* AppDelegate.swift */,
-				2AF24EDA21F4188F00BA85DF /* ViewController.swift */,
+				2AF24EDA21F4188F00BA85DF /* RootViewController.swift */,
 				2AB5FF5821F4AB8A00308D67 /* SettingViewController.swift */,
 				2AF24EDC21F4188F00BA85DF /* Main.storyboard */,
 				2AB5FF5A21F4AE7500308D67 /* NavigationController.swift */,
+				2AAA284A21FD781800AD618D /* SidemenuViewController.swift */,
 				2AB5FF5621F4715100308D67 /* IconButton.swift */,
 				2AF24EDF21F4189500BA85DF /* Assets.xcassets */,
 				2AF24EE121F4189500BA85DF /* LaunchScreen.storyboard */,
@@ -145,10 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AB5FF5721F4715100308D67 /* IconButton.swift in Sources */,
-				2AF24EDB21F4188F00BA85DF /* ViewController.swift in Sources */,
+				2AF24EDB21F4188F00BA85DF /* RootViewController.swift in Sources */,
 				2AB5FF5B21F4AE7500308D67 /* NavigationController.swift in Sources */,
 				2AF24ED921F4188F00BA85DF /* AppDelegate.swift in Sources */,
 				2AB5FF5921F4AB8A00308D67 /* SettingViewController.swift in Sources */,
+				2AAA284B21FD781800AD618D /* SidemenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

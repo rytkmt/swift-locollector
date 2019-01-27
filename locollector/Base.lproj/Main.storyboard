@@ -61,6 +61,9 @@
                                             <constraint firstAttribute="width" constant="20" id="oxl-qy-Zx1"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="list"/>
+                                        <connections>
+                                            <action selector="tapListButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WXN-vL-iKF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
