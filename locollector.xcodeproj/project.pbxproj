@@ -17,6 +17,7 @@
 		2AF24EDE21F4188F00BA85DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF24EDC21F4188F00BA85DF /* Main.storyboard */; };
 		2AF24EE021F4189500BA85DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF24EDF21F4189500BA85DF /* Assets.xcassets */; };
 		2AF24EE321F4189500BA85DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF24EE121F4189500BA85DF /* LaunchScreen.storyboard */; };
+		69DB56BD429079C7D54F6BD3 /* Pods_locollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F0A20AE61DB5A660B1AE89 /* Pods_locollector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		2AF24EDF21F4189500BA85DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AF24EE221F4189500BA85DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AF24EE421F4189500BA85DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506C801433EEA42AC8955817 /* Pods-locollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locollector/Pods-locollector.debug.xcconfig"; sourceTree = "<group>"; };
+		74F0A20AE61DB5A660B1AE89 /* Pods_locollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3E678040EFBA044F652851 /* Pods-locollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locollector.release.xcconfig"; path = "Pods/Target Support Files/Pods-locollector/Pods-locollector.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DB56BD429079C7D54F6BD3 /* Pods_locollector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				2AF24ED721F4188F00BA85DF /* locollector */,
 				2AF24ED621F4188F00BA85DF /* Products */,
+				61B0BBFA5A04B30021494345 /* Pods */,
+				6E4B288D8EE0E529759DDEEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			path = locollector;
 			sourceTree = "<group>";
 		};
+		61B0BBFA5A04B30021494345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				506C801433EEA42AC8955817 /* Pods-locollector.debug.xcconfig */,
+				7C3E678040EFBA044F652851 /* Pods-locollector.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E4B288D8EE0E529759DDEEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74F0A20AE61DB5A660B1AE89 /* Pods_locollector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AF24EE721F4189500BA85DF /* Build configuration list for PBXNativeTarget "locollector" */;
 			buildPhases = (
+				0FA6A2450E9F7F32A242E274 /* [CP] Check Pods Manifest.lock */,
 				2AF24ED121F4188F00BA85DF /* Sources */,
 				2AF24ED221F4188F00BA85DF /* Frameworks */,
 				2AF24ED321F4188F00BA85DF /* Resources */,
+				4FE3AE722099C89E4043AD91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +170,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FA6A2450E9F7F32A242E274 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-locollector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FE3AE722099C89E4043AD91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-locollector/Pods-locollector-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locollector/Pods-locollector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2AF24ED121F4188F00BA85DF /* Sources */ = {
@@ -300,6 +375,7 @@
 		};
 		2AF24EE821F4189500BA85DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 506C801433EEA42AC8955817 /* Pods-locollector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -318,6 +394,7 @@
 		};
 		2AF24EE921F4189500BA85DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C3E678040EFBA044F652851 /* Pods-locollector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

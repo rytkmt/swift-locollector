@@ -1,0 +1,6 @@
+framework module Pods_locollector {
+  umbrella header "Pods-locollector-umbrella.h"
+
+  export *
+  module * { export * }
+}
