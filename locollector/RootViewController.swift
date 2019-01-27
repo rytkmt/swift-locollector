@@ -26,6 +26,8 @@ class RootViewController: UIViewController {
         setCornerRadiusShadow(addButton, cornerRadius: 25, shadowSize: 2)
         sidemenuViewController.delegate = self
         sidemenuViewController.startPanGestureRecognizing()
+        
+        setMap()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +67,25 @@ class RootViewController: UIViewController {
             self.sidemenuViewController.removeFromParent()
             self.sidemenuViewController.view.removeFromSuperview()
         })
+    }
+    
+    private func setMap(){
+        let firstPoint = setPointPins()
+        
+        // 倍率を指定 Delta=度 で1度が約111km
+        let span : MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        let region : MKCoordinateRegion = MKCoordinateRegion(center: firstPoint, span: span)
+        mapView.region = region
+    }
+    
+    // TODO: DBから取得しループしてすべてをannotationとする
+    private func setPointPins() -> CLLocationCoordinate2D{
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(35.710063, 139.8107)
+        annotation.title = "東京スカイツリー"
+        mapView.addAnnotation(annotation)
+        
+        return CLLocationCoordinate2DMake(35.710063, 139.8107)
     }
 
 
