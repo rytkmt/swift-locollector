@@ -9,7 +9,9 @@
 import UIKit
 import MapKit
 class RootViewController: UIViewController {
-    let sidemenuViewController = SidemenuViewController()
+    
+//    let sidemenuViewController = SidemenuViewController()
+    let sidemenuViewController = StoryboardBuilder.sharedInstance.sidemenuViewController()
     private var isShownSidemenu: Bool {
         return sidemenuViewController.parent == self
     }

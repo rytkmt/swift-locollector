@@ -17,8 +17,7 @@ protocol SidemenuViewControllerDelegate: class {
 }
 
 class SidemenuViewController: UIViewController {
-    private let contentView = UIView(frame: .zero)
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    @IBOutlet weak var contentView: UIView!
     private var screenEdgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer!
     private var panGestureRecognizer: UIPanGestureRecognizer!
     weak var delegate: SidemenuViewControllerDelegate?
@@ -52,17 +51,7 @@ class SidemenuViewController: UIViewController {
         contentRect.size.width = contentMaxWidth
         contentRect.origin.x = -contentRect.width
         contentView.frame = contentRect
-        contentView.backgroundColor = .white
         contentView.autoresizingMask = .flexibleHeight
-        view.addSubview(contentView)
-
-        tableView.frame = contentView.bounds
-        tableView.separatorInset = .zero
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Default")
-        contentView.addSubview(tableView)
-        tableView.reloadData()
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped(sender:)))
         tapGestureRecognizer.delegate = self
@@ -154,32 +143,8 @@ class SidemenuViewController: UIViewController {
     }
 }
 
-extension SidemenuViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Default", for: indexPath)
-        cell.textLabel?.text = "Item \(indexPath.row)"
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.sidemenuViewController(self, didSelectItemAt: indexPath)
-    }
-}
-
 extension SidemenuViewController: UIGestureRecognizerDelegate {
     internal func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        let location = gestureRecognizer.location(in: tableView)
-        if tableView.indexPathForRow(at: location) != nil {
-            return false
-        }
         return true
     }
 }

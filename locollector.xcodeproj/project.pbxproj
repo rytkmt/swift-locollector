@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2AAA284B21FD781800AD618D /* SidemenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAA284A21FD781800AD618D /* SidemenuViewController.swift */; };
+		2AAA284D21FD8AF900AD618D /* StoryBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAA284C21FD8AF900AD618D /* StoryBoardBuilder.swift */; };
 		2AB5FF5721F4715100308D67 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5FF5621F4715100308D67 /* IconButton.swift */; };
 		2AB5FF5921F4AB8A00308D67 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5FF5821F4AB8A00308D67 /* SettingViewController.swift */; };
 		2AB5FF5B21F4AE7500308D67 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5FF5A21F4AE7500308D67 /* NavigationController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		2AAA284A21FD781800AD618D /* SidemenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidemenuViewController.swift; sourceTree = "<group>"; };
+		2AAA284C21FD8AF900AD618D /* StoryBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardBuilder.swift; sourceTree = "<group>"; };
 		2AB5FF5621F4715100308D67 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		2AB5FF5821F4AB8A00308D67 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2AB5FF5A21F4AE7500308D67 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				2AF24EDF21F4189500BA85DF /* Assets.xcassets */,
 				2AF24EE121F4189500BA85DF /* LaunchScreen.storyboard */,
 				2AF24EE421F4189500BA85DF /* Info.plist */,
+				2AAA284C21FD8AF900AD618D /* StoryBoardBuilder.swift */,
 			);
 			path = locollector;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				2AF24EDB21F4188F00BA85DF /* RootViewController.swift in Sources */,
 				2AB5FF5B21F4AE7500308D67 /* NavigationController.swift in Sources */,
 				2AF24ED921F4188F00BA85DF /* AppDelegate.swift in Sources */,
+				2AAA284D21FD8AF900AD618D /* StoryBoardBuilder.swift in Sources */,
 				2AB5FF5921F4AB8A00308D67 /* SettingViewController.swift in Sources */,
 				2AAA284B21FD781800AD618D /* SidemenuViewController.swift in Sources */,
 			);
@@ -299,12 +303,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97CQ57D5R4;
 				INFOPLIST_FILE = locollector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rytkmt.locollector;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.primetheory.locollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,12 +321,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97CQ57D5R4;
 				INFOPLIST_FILE = locollector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rytkmt.locollector;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.primetheory.locollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

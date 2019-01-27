@@ -45,7 +45,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="settingButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Se6-rI-cb9" customClass="ImageButton" customModule="locollector" customModuleProvider="target">
                                         <rect key="frame" x="305" y="15" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="22" id="KO9-DE-LnW"/>
+                                            <constraint firstAttribute="width" constant="22" id="JQj-J4-Ipe"/>
                                             <constraint firstAttribute="height" constant="22" id="UIn-dU-Fg5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -58,7 +58,7 @@
                                         <rect key="frame" x="18" y="16" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Py3-F5-1uS"/>
-                                            <constraint firstAttribute="width" constant="20" id="oxl-qy-Zx1"/>
+                                            <constraint firstAttribute="width" constant="20" id="Upd-zc-WB0"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="list"/>
                                         <connections>
@@ -146,6 +146,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJS-0A-aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-990" y="-242"/>
+        </scene>
+        <!--Sidemenu View Controller-->
+        <scene sceneID="iXL-Yd-Zz4">
+            <objects>
+                <viewController storyboardIdentifier="SidemenuViewController" id="v3K-ye-bz4" customClass="SidemenuViewController" customModule="locollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Bu-6K-LrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDR-3H-mmZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="J8a-OZ-kwf"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="bDR-3H-mmZ" id="NTu-N3-qyJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHh-Om-LL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="563"/>
         </scene>
     </scenes>
     <resources>
