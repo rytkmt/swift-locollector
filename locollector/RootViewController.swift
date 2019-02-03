@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import RealmSwift
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 //    let sidemenuViewController = SidemenuViewController()
     let sidemenuViewController = StoryboardBuilder.sharedInstance.sidemenuViewController()
@@ -19,6 +19,7 @@ class RootViewController: UIViewController {
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     var locations: Results<Location>!
 
@@ -32,11 +33,16 @@ class RootViewController: UIViewController {
         
         self.locations = loadStoredLocations()
         prepareMap()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+//        tableView.reloadData()
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        tableView.reloadData()
     }
 
     func setCornerRadiusShadow(_ view: UIView, cornerRadius: CGFloat = 10, shadowSize: Int = 1) {
@@ -76,7 +82,7 @@ class RootViewController: UIViewController {
     
     private func prepareMap(){
         for location in self.locations {
-            self.dropPin(location)
+            let _ = self.dropPin(location)
         }
         pointLocation(self.locations.first)
         
@@ -112,15 +118,32 @@ class RootViewController: UIViewController {
     }
 
     @IBAction func tapAddButton(_ sender: Any) {
-        let location = Location.create(title: "東京駅", latitude: 35.681236, longitude: 139.767125)
+        let location = Location.create(title: "大阪駅", latitude: 34.702485, longitude: 135.495951)
         let realm = try! Realm()
         try! realm.write {
             realm.add(location)
         }
-        dropPin(location)
+        let _ = dropPin(location)
         pointLocation(location)
     }
     
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        
+        let location = locations[indexPath.row]
+        cell.textLabel?.text = location.title
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let location = locations[indexPath.row]
+        pointLocation(location)
+    }
+
 }
 
 extension RootViewController: SidemenuViewControllerDelegate {

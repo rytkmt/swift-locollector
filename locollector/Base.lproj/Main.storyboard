@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="addButton" destination="qGR-1I-hWh" id="wKj-BV-4ga"/>
                         <outlet property="mapView" destination="G3Q-Mt-0SL" id="e8S-wQ-orO"/>
+                        <outlet property="tableView" destination="Da1-QR-2bg" id="m0S-b2-vZD"/>
                         <outlet property="topBarView" destination="7kT-D6-ihE" id="nyM-Gc-oSu"/>
                     </connections>
                 </viewController>
