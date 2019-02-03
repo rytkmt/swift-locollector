@@ -36,8 +36,6 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.reloadData()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -85,7 +83,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             let _ = self.dropPin(location)
         }
         pointLocation(self.locations.first)
-        
+
     }
     
     // TODO: DBから取得しループしてすべてをannotationとする
@@ -118,13 +116,17 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func tapAddButton(_ sender: Any) {
-        let location = Location.create(title: "大阪駅", latitude: 34.702485, longitude: 135.495951)
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(location)
-        }
-        let _ = dropPin(location)
-        pointLocation(location)
+//        let location = Location.create(title: "大阪駅", latitude: 34.702485, longitude: 135.495951)
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.add(location)
+//        }
+//        let _ = dropPin(location)
+//        pointLocation(location)
+        let modalViewController = StoryboardBuilder.sharedInstance.additionalModalViewController()
+        modalViewController.modalPresentationStyle = .custom
+        modalViewController.transitioningDelegate = self
+        present(modalViewController, animated: true, completion: nil)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -166,5 +168,11 @@ extension RootViewController: SidemenuViewControllerDelegate {
 
     func sidemenuViewController(_ sidemenuViewController: SidemenuViewController, didSelectItemAt indexPath: IndexPath) {
         hideSidemenu(animated: true)
+    }
+}
+
+extension RootViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

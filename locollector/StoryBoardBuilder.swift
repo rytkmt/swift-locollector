@@ -32,4 +32,8 @@ class StoryboardBuilder: NSObject {
     func sidemenuViewController() -> SidemenuViewController {
         return mainStoryboard.instantiateViewController(withIdentifier: "SidemenuViewController") as! SidemenuViewController
     }
+    
+    func additionalModalViewController() -> AdditionalModalViewController {
+        return mainStoryboard.instantiateViewController(withIdentifier: "AdditionalModalViewController") as! AdditionalModalViewController
+    }
 }
